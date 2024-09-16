@@ -1,18 +1,4 @@
 let handler = async(m, { conn, usedPrefix, command, text }) => {
-const fkontak = {
-	"key": {
-    "participants":"0@s.whatsapp.net",
-		"remoteJid": "status@broadcast",
-		"fromMe": false,
-		"id": "Halo"
-	},
-	"message": {
-		"contactMessage": {
-			"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
-		}
-	},
-	"participant": "0@s.whatsapp.net"
-}
 
   let enc = {
     "a": "•-",
@@ -142,5 +128,6 @@ handler.help = ["morse"].map(v => v + " <encode|decode>")
 handler.tags = ["tools"]
 
 handler.command = /^(morse|morce)/i
+handler.money = 40
 
 export default handler

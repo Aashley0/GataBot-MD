@@ -5,13 +5,12 @@ let pp = 'https://c4.wallpaperflare.com/wallpaper/991/456/22/sketch-artist-anime
 let gata = Math.floor(Math.random() * 3000)
 global.db.data.users[m.sender].exp += gata * 1  
 let time = global.db.data.users[m.sender].lastwork + 600000
-if (new Date - global.db.data.users[m.sender].lastwork < 600000) throw `*Ya trabajó ⚒ espere unos ${msToTime(time - new Date())} para volver a trabajar!!*`
+if (new Date - global.db.data.users[m.sender].lastwork < 600000) throw `*Ya trabajaste, espere unos ${msToTime(time - new Date())} para volver a trabajar!!*`
 
-//m.reply(`${pickRandom(global.work)} *${gata} XP*`)
-conn.sendHydrated(m.chat, wm, `${pickRandom(global.work)} ${gata} XP`, pp, md, '𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿', null, null, [
-['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪 ☘️', `.menu`]
-], m,) 
- 
+await conn.reply(m.chat, `*${pickRandom(global.work)}* ${gata} XP`, fkontak, pp, m)
+/*conn.sendHydrated(m.chat, wm, `${pickRandom(global.work)} ${gata} XP`, pp, md, '饾檪饾櫈饾櫓饾檭饾櫔饾櫁', null, null, [
+['饾棤 饾棙 饾棥 饾棬 鈽橈笍', `#menu`]
+], m,) */
 global.db.data.users[m.sender].lastwork = new Date * 1
 }
 handler.help = ['work']
@@ -38,23 +37,5 @@ function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
 
-global.work = ["Trabajas como cortador de galletas y ganas", "Trabaja para una empresa militar privada, ganando", "Organiza un evento de cata de vinos y obtiene",
- "Te secuestran y te llevan a un coliseo subterráneo donde luchaste contra monstruos con personas que nunca antes habías conocido. Ganas", "Limpias la chimenea y encuentras", 
-"Desarrollas juegos para ganarte la vida y ganas", 
-"¿Por qué este comando se llama trabajo? Ni siquiera estás haciendo nada relacionado con el trabajo. Sin embargo, ganas", "Trabajaste en la oficina horas extras por", 
-"Trabajas como secuestrador de novias y ganas", 
-"Alguien vino y representó una obra de teatro. Por mirar te dieron", "Compraste y vendiste artículos y Ganaste", "Trabajas en el restaurante de la abuela como cocinera y ganas", 
-"Trabajas 10 minutos en un Pizza Hut local. Ganaste", 
-"Trabajas como escritor(a) de galletas de la fortuna y ganas", "Revisas tu bolso y decides vender algunos artículos inútiles que no necesitas. Resulta que toda esa basura valía", 
-"Ves a alguien luchando por subir una caja a su auto, te apresuras a ayudarlo antes de que se lastime. Después de ayudarlos, amablemente te dan", 
-"Desarrollas juegos para ganarte la vida y ganas", 
-"Ganas un concurso de comer chili picante. ¡El premio es", 
-"Trabajas todo el día en la empresa por", 
-"Ayudas a moderar el grupo de DyLux por", "Diseñaste un logo para *FG* por", 
-"Moderaste el grupo cuando *FG* no estaba, el pago fue", 
-"¡Trabajó lo mejor que pudo en una imprenta que estaba contratando y ganó su bien merecido!", 
-"Trabajas como podador de arbustos para *FG98* y ganas", "La demanda de juegos para dispositivos móviles ha aumentado, por lo que creas un nuevo juego lleno de micro-transacciones. Con tu nuevo juego ganas un total de", 
-"Trabajas como actor de voz para Bob Esponja y te las arreglaste para ganar", 
-"Estabas cultivando y Ganaste", "Trabajas como constructor de castillos de arena y ganas", "Trabajaste y Ganaste", 
-"Trabajas como artista callejera y ganas","¡Hiciste trabajo social por una buena causa! por tu buena causa Recibiste"
+global.work = ["Trabajas como cortador de galletas y ganas", "Cuidarte el grupo cuando los admin no estaba por eso ganas", "Trabaja para una empresa militar privada, ganando", "Organiza un evento de cata de vinos y obtiene", "Moderaste el grupo cuando GATADIOS no estaba, el pago fue", "iba caminando por la calle y que encuentra con", "ayudarte con el grupo mientras los admin no estaba el pago fue", "Te secuestran y te llevan a un coliseo subterraneo donde luchaste contra monstruos con personas que nunca antes habias conocido. Ganas", "Limpias la chimenea y encuentras", "Desarrollas juegos para ganarte la vida y ganas", "Por que este comando se llama trabajo? Ni siquiera estas haciendo nada relacionado con el trabajo. Sin embargo, ganas", "Trabajaste en la oficina horas extras por", "Trabajas como secuestrador de novias y ganas", "Alguien vino y representa una obra de teatro. Por mirar te dieron", "Compraste y vendiste articulos y Ganaste", "Trabajas en el restaurante de la abuela como cocinera y ganas", "Trabajas 10 minutos en un Pizza Hut local. Ganaste", "Trabajas como escritor(a) de galletas de la fortuna y ganas", "Ves a alguien luchando por subir una caja a su auto, te apresuras a ayudarlo antes de que se lastime. Despues de ayudarlos, amablemente te dan", "Desarrollas juegos para ganarte la vida y ganas", "Ganas un concurso de comer chili picante. El premio es", "Trabajas todo el dia en la empresa por", "Ayudas a moderar el grupo de GataDios por", "Diseñaste un logo para FG por", "Moderaste el grupo cuando GataDios no estaba, el pago fue", "Trabajaste lo mejor que pudo en una imprenta que estaba contratando y gana su bien merecido!", "Trabajas como podador de arbustos para FG98 y ganas", "La demanda de juegos para dispositivos moviles ha aumentado, por lo que creas un nuevo juego lleno de micro-transacciones. Con tu nuevo juego ganas un total de", "Trabajas como actor de voz para Bob Esponja y te las arreglaste para ganar", "Estabas cultivando y Ganaste", "Trabajas como constructor de castillos de arena y ganas", "Trabajaste y Ganaste", "Trabajas como artista callejera y ganas","Hiciste trabajo social por una buena causa! por tu buena causa Recibiste"
 ]
